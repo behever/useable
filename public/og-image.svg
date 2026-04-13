@@ -1,0 +1,17 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#fafafa"/>
+  <!-- Geometric accent shapes -->
+  <rect x="900" y="80" width="120" height="120" rx="4" fill="#4A5568" opacity="0.08" transform="rotate(15 960 140)"/>
+  <rect x="1000" y="200" width="80" height="80" rx="4" fill="#4A5568" opacity="0.06" transform="rotate(-25 1040 240)"/>
+  <rect x="1050" y="100" width="60" height="160" rx="4" fill="#4A5568" opacity="0.10" transform="rotate(35 1080 180)"/>
+  <!-- U brand mark -->
+  <rect x="80" y="200" width="64" height="64" rx="14" fill="#1a1a1a"/>
+  <text x="112" y="245" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">U</text>
+  <!-- Studio name -->
+  <text x="160" y="240" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#1a1a1a">Useable Studio</text>
+  <!-- Headline -->
+  <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="600" fill="#1a1a1a">We build software for</text>
+  <text x="80" y="395" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="600" fill="#1a1a1a">local service businesses.</text>
+  <!-- Subtext -->
+  <text x="80" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#777">useable.studio</text>
+</svg>
