@@ -1,0 +1,25 @@
+# Useable Studio
+
+> Useable Studio builds software for local service businesses — lawn care crews, cleaning teams, plumbers, electricians, and HVAC techs who run on clipboards, group texts, and spreadsheets.
+
+## Products
+
+- [Grassr](https://grassr.app): Lawn care management software for crews and solo operators. Scheduling, route planning, invoicing, and customer management. Live and available now.
+- Two additional products are in development for other service trades.
+
+## About
+
+Useable Studio builds software one trade at a time. Each product is designed for a specific industry's daily routines and workflows — not adapted from enterprise software. Every tool is designed to be learned in minutes, useful on day one, and priced for small businesses.
+
+Founded in 2025. Based in the United States.
+
+## Key Pages
+
+- Homepage: https://useable.studio
+- Privacy Policy: https://useable.studio/privacy
+- Grassr (lawn care product): https://grassr.app
+
+## Contact
+
+- Email: hello@useable.studio
+- Website: https://useable.studio
