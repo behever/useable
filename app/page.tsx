@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
+import { About } from "@/components/about";
 import { ProductGrid } from "@/components/product-grid";
 import { Footer } from "@/components/footer";
 import { GeometricShapes } from "@/components/geometric-shapes";
@@ -11,6 +12,7 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
+        <About />
         <ProductGrid />
       </main>
       <Footer />

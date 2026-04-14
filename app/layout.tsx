@@ -10,13 +10,16 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Useable Studio — Software for Local Service Businesses",
+  title: "Local Service Business Software | Useable Studio",
   description:
-    "We build software for local service businesses. Tools for the crews that run on clipboards, group texts, and spreadsheets.",
+    "Simple software for lawn care, cleaning, and local service crews who still run on clipboards and spreadsheets. See what we're building — and get early access.",
+  alternates: {
+    canonical: "https://useable.studio",
+  },
   openGraph: {
-    title: "Useable Studio — Software for Local Service Businesses",
+    title: "Local Service Business Software | Useable Studio",
     description:
-      "We build software for local service businesses. Tools for the crews that run on clipboards, group texts, and spreadsheets.",
+      "Simple software for lawn care, cleaning, and local service crews who still run on clipboards and spreadsheets. See what we're building — and get early access.",
     type: "website",
     url: "https://useable.studio",
     siteName: "Useable Studio",
@@ -25,15 +28,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Useable Studio",
+        alt: "Useable Studio — Software for Local Service Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Useable Studio — Software for Local Service Businesses",
+    title: "Local Service Business Software | Useable Studio",
     description:
-      "We build software for local service businesses. Tools for the crews that run on clipboards, group texts, and spreadsheets.",
+      "Simple software for lawn care, cleaning, and local service crews who still run on clipboards and spreadsheets. See what we're building — and get early access.",
     images: ["/og-image.png"],
   },
   metadataBase: new URL("https://useable.studio"),
@@ -55,6 +58,22 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Useable Studio",
+              url: "https://useable.studio",
+              logo: "https://useable.studio/icon.svg",
+              description:
+                "We build software for local service businesses.",
+              foundingDate: "2025",
+              sameAs: [],
+            }),
+          }}
+        />
         {children}
         <Analytics />
       </body>

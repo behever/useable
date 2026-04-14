@@ -10,6 +10,12 @@ export function Footer() {
         >
           Grassr
         </a>
+        <a
+          href="/privacy"
+          className="text-[#999] font-medium hover:text-[#555] transition-colors min-h-[44px] inline-flex items-center"
+        >
+          Privacy
+        </a>
       </div>
       <div>&copy; 2026 Useable Studio</div>
     </footer>
