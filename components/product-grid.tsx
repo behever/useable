@@ -1,68 +1,104 @@
 import { ArrowUpRight } from "lucide-react";
+import { SectionLabel } from "@/components/ds/section-label";
+import { Badge } from "@/components/ds/badge";
 
-const products = [
+type Tone = "live" | "building" | "soon";
+
+type Product = {
+  name: string;
+  tagline: string;
+  description: string;
+  badge: { tone: Tone; label: string };
+  href?: string;
+  redacted: boolean;
+};
+
+const products: Product[] = [
   {
     name: "Grassr",
     tagline: "Lawn care management for crews and solo operators",
     description:
-      "Scheduling, route planning, invoicing, and customer management built for lawn care professionals. Designed to replace the clipboard and get crews paid faster.",
-    status: "Live" as const,
+      "Scheduling, route planning, invoicing, and customer management. Built to replace the clipboard and get crews paid faster.",
+    badge: { tone: "live", label: "Live" },
     href: "https://grassr.app",
     redacted: false,
   },
   {
-    name: "Upcoming Product",
+    name: "Field Service Tool",
     tagline: "A new tool for service businesses",
-    description: "A new tool for service businesses",
-    status: "Building" as const,
+    description:
+      "Deep workflows for a trade we're getting to know intimately. Announcing soon.",
+    badge: { tone: "building", label: "Building" },
     redacted: true,
   },
   {
-    name: "Upcoming Product",
+    name: "Next Trade",
     tagline: "More tools for service businesses",
-    description: "More tools for service businesses",
-    status: "Coming Soon" as const,
+    description: "One product per trade, built from the truck up.",
+    badge: { tone: "soon", label: "Coming Soon" },
     redacted: true,
   },
 ];
 
-const statusStyles = {
-  Live: "bg-[#ecfdf5] text-[#059669]",
-  Building: "bg-[#fffbeb] text-[#d97706]",
-  "Coming Soon": "bg-[#eef2ff] text-[#6366f1]",
-};
+const rowClass =
+  "grid grid-cols-1 md:grid-cols-[220px_1fr_auto] items-start md:items-center gap-3 md:gap-8 py-6 md:py-[26px]";
+
+const nameStyle = {
+  fontFamily: "var(--font-display)",
+  fontSize: 24,
+  fontWeight: 700,
+  letterSpacing: "-0.01em",
+  color: "var(--ink)",
+} as const;
+
+const taglineStyle = {
+  fontFamily: "var(--font-body)",
+  fontSize: 16,
+  color: "var(--ink-soft)",
+} as const;
+
+const descStyle = {
+  fontFamily: "var(--font-body)",
+  fontSize: 14,
+  color: "var(--ink-mute)",
+  marginTop: 4,
+} as const;
 
 export function ProductGrid() {
   return (
     <section
       id="products"
-      className="px-6 md:px-16 max-w-[1200px] mx-auto relative pb-16 md:pb-24"
+      className="px-6 md:px-12 max-w-[1200px] mx-auto py-14 md:py-16"
+      style={{ borderTop: "2px solid var(--ink)" }}
     >
-      <h2 className="text-xs uppercase tracking-[0.12em] text-[#999] font-semibold mb-8">
-        Products
-      </h2>
-      <div className="flex flex-col">
-        {products.map((product, i) => {
-          const isLast = i === products.length - 1;
+      <SectionLabel>Products</SectionLabel>
+      <div>
+        {products.map((p, i) => {
+          const border = {
+            borderTop: i === 0 ? "1px solid var(--line-soft)" : "none",
+            borderBottom: "1px solid var(--line-soft)",
+          } as const;
 
-          if (product.redacted) {
+          if (p.redacted) {
             return (
               <div
                 key={i}
-                className={`grid grid-cols-1 md:grid-cols-[200px_1fr_auto] items-center py-6 border-t border-[#e5e5e5] gap-2 md:gap-8 opacity-70 ${isLast ? "border-b" : ""}`}
+                className={rowClass}
+                style={{ ...border, opacity: 0.6 }}
                 aria-hidden="true"
               >
-                <div className="text-lg font-semibold tracking-[-0.01em] redacted-text text-[#d0d0d0]">
-                  {product.name}
+                <div style={nameStyle} className="redacted-text">
+                  {p.name}
                 </div>
-                <div className="text-sm text-[#888] redacted-text">
-                  {product.tagline}
+                <div>
+                  <div style={taglineStyle} className="redacted-text">
+                    {p.tagline}
+                  </div>
+                  <div style={descStyle} className="redacted-text">
+                    {p.description}
+                  </div>
                 </div>
-                <span
-                  className={`text-[0.7rem] uppercase tracking-[0.06em] font-semibold px-3 py-1 rounded-full whitespace-nowrap w-fit ${statusStyles[product.status]}`}
-                >
-                  {product.status}
-                </span>
+                <Badge tone={p.badge.tone}>{p.badge.label}</Badge>
               </div>
             );
           }
@@ -70,24 +106,25 @@ export function ProductGrid() {
           return (
             <a
               key={i}
-              href={product.href}
+              href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] items-start py-6 border-t border-[#e5e5e5] gap-2 md:gap-8 transition-colors hover:bg-black/[0.02] rounded-lg focus-visible:outline-2 focus-visible:outline-[#4A5568] focus-visible:outline-offset-2 ${isLast ? "border-b" : ""}`}
+              className={`group ${rowClass}`}
+              style={{ ...border, textDecoration: "none" }}
             >
-              <div className="text-lg font-semibold tracking-[-0.01em] flex items-center gap-2">
-                {product.name}
-                <ArrowUpRight className="w-4 h-4 text-[#999] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div style={nameStyle} className="flex items-center gap-2">
+                {p.name}
+                <ArrowUpRight
+                  className="w-[18px] h-[18px] opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ color: "var(--vermillion)" }}
+                  aria-hidden="true"
+                />
               </div>
               <div>
-                <div className="text-sm text-[#555]">{product.tagline}</div>
-                <div className="text-sm text-[#999] mt-1">{product.description}</div>
+                <div style={taglineStyle}>{p.tagline}</div>
+                <div style={descStyle}>{p.description}</div>
               </div>
-              <span
-                className={`text-[0.7rem] uppercase tracking-[0.06em] font-semibold px-3 py-1 rounded-full whitespace-nowrap w-fit ${statusStyles[product.status]}`}
-              >
-                {product.status}
-              </span>
+              <Badge tone={p.badge.tone}>{p.badge.label}</Badge>
             </a>
           );
         })}

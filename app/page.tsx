@@ -2,14 +2,13 @@ import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { ProductGrid } from "@/components/product-grid";
-import { FAQ, faqJsonLd } from "@/components/faq";
+import { FAQ } from "@/components/faq";
+import { faqJsonLd } from "@/components/faq-data";
 import { Footer } from "@/components/footer";
-import { GeometricShapes } from "@/components/geometric-shapes";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <GeometricShapes />
       <Nav />
       <main id="main">
         <Hero />

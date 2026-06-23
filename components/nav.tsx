@@ -1,19 +1,50 @@
+"use client";
+
+import Link from "next/link";
+import { Logo } from "@/components/ds/logo";
+import { Button } from "@/components/ds/button";
+
+const links = ["Products", "About", "FAQ"];
+
 export function Nav() {
+  const earlyAccess = () => {
+    const el = document.getElementById("waitlist");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.location.href = "/#waitlist";
+  };
+
   return (
-    <nav className="flex justify-between items-center px-6 py-8 md:px-16 relative z-10">
-      <div className="font-bold text-base tracking-tight text-[#1a1a1a]">
-        Useable Studio
+    <nav
+      className="sticky top-0 z-20 flex items-center justify-between px-6 md:px-12 py-[18px] md:py-[22px]"
+      style={{ background: "var(--paper)", borderBottom: "2px solid var(--ink)" }}
+    >
+      <Link href="/" aria-label="Useable Studio — home" style={{ textDecoration: "none" }}>
+        <Logo variant="inline" />
+      </Link>
+      <div className="flex items-center gap-5 md:gap-7">
+        <div className="hidden sm:flex items-center gap-6 md:gap-7">
+          {links.map((l) => (
+            <a
+              key={l}
+              href={`/#${l.toLowerCase()}`}
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 12,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "var(--ink)",
+                textDecoration: "none",
+              }}
+            >
+              {l}
+            </a>
+          ))}
+        </div>
+        <Button variant="primary" size="sm" onClick={earlyAccess}>
+          Early Access
+        </Button>
       </div>
-      <ul className="flex gap-4 md:gap-8 list-none">
-        <li>
-          <a
-            href="#products"
-            className="text-[#666] text-sm font-medium hover:text-[#1a1a1a] transition-colors min-h-[44px] min-w-[44px] inline-flex items-center"
-          >
-            Products
-          </a>
-        </li>
-      </ul>
     </nav>
   );
 }
