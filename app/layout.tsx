@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-dm-sans",
-});
 
 export const metadata: Metadata = {
   title: "Local Service Business Software | Useable Studio",
@@ -49,12 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSans.variable} font-sans antialiased bg-[#fafafa] text-[#1a1a1a]`}
-      >
+      <body className="antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#1a1a1a] focus:text-white focus:rounded"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--ink)] focus:text-[var(--white)] focus:rounded-[6px]"
         >
           Skip to content
         </a>
