@@ -14,6 +14,9 @@ Useable Studio builds a separate, focused product for each trade it serves. Gras
 ## Key Pages
 
 - Homepage: https://useable.studio
+- About Useable Studio: https://useable.studio/about
+- Grassr product profile: https://useable.studio/products/grassr
+- Cleanr product profile: https://useable.studio/products/cleanr
 - Privacy Policy: https://useable.studio/privacy
 - Grassr (lawn care product): https://grassr.io/
 - Cleanr (cleaning business product): https://trycleanr.com/

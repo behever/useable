@@ -6,6 +6,7 @@ import { About } from "@/components/about";
 import { FAQ, faqJsonLd } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { products } from "@/lib/products";
+import { softwareApplicationJsonLd } from "@/lib/structured-data";
 
 export default function Home() {
   return (
@@ -29,24 +30,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@graph": products.map((product) => ({
-              "@type": "SoftwareApplication",
-              "@id": product.schemaId,
-              name: product.name,
-              url: product.href,
-              sameAs: product.appStoreHref,
-              applicationCategory: "BusinessApplication",
-              applicationSubCategory: product.applicationSubCategory,
-              operatingSystem: product.operatingSystem,
-              description: product.description,
-              ...(product.publisherOrganizationId
-                ? {
-                    publisher: {
-                      "@id": product.publisherOrganizationId,
-                    },
-                  }
-                : {}),
-            })),
+            "@graph": products.map(softwareApplicationJsonLd),
           }),
         }}
       />

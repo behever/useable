@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { products } from "@/lib/products";
 
@@ -44,13 +45,11 @@ export function Hero() {
 
         <div className="showcase-products">
           {products.map((product, index) => (
-            <a
+            <Link
               key={product.slug}
-              href={product.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={product.internalHref}
               className={"showcase-product showcase-product--" + product.slug}
-              aria-label={"Visit " + product.name}
+              aria-label={"Learn about " + product.name}
             >
               <div className="showcase-product-topline">
                 <span>{String(index + 1).padStart(2, "0")}</span>
@@ -76,7 +75,7 @@ export function Hero() {
                   <span key={feature}>{feature}</span>
                 ))}
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

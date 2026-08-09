@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { organizationId, websiteId } from "@/lib/structured-data";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -58,19 +59,30 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://useable.studio/#organization",
-              name: "Useable Studio",
-              legalName: "Useable LLC",
-              url: "https://useable.studio",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://useable.studio/useable-logo.png",
-                width: 512,
-                height: 512,
-              },
-              description: "We build software for local service businesses.",
-              sameAs: [],
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": organizationId,
+                  name: "Useable Studio",
+                  legalName: "Useable LLC",
+                  url: "https://useable.studio/",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://useable.studio/useable-logo.png",
+                    width: 512,
+                    height: 512,
+                  },
+                  description:
+                    "Useable Studio builds focused software for local service businesses.",
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": websiteId,
+                  name: "Useable Studio",
+                  url: "https://useable.studio/",
+                  publisher: { "@id": organizationId },
+                },
+              ],
             }),
           }}
         />

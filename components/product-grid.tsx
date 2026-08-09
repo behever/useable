@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowUpRight, Check } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { products } from "@/lib/products";
 
 export function ProductGrid() {
@@ -62,11 +63,18 @@ export function ProductGrid() {
               </ul>
 
               <div className="product-card-actions">
+                <Link
+                  href={product.internalHref}
+                  className="button button--dark"
+                >
+                  About {product.name}
+                  <ArrowRight aria-hidden="true" />
+                </Link>
                 <a
                   href={product.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button button--dark"
+                  className="text-link"
                 >
                   Visit {product.name}
                   <ArrowUpRight aria-hidden="true" />

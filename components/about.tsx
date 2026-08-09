@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 export function About() {
   return (
     <section id="about" className="about-section">
@@ -9,11 +12,15 @@ export function About() {
           current products serve lawn care operators and cleaning businesses.
         </p>
         <p>
-          Those trades share recurring work, crews, customer details, routes,
+          Those trades share recurring work, crews, customer details, schedules,
           estimates or quotes, invoices, and payments. They also have different
           language and day-to-day workflows, so we build a focused product for
           each one.
         </p>
+        <Link href="/about" className="about-link">
+          More about Useable Studio
+          <ArrowRight aria-hidden="true" />
+        </Link>
       </div>
 
       <dl className="about-facts" aria-label="Useable Studio product facts">

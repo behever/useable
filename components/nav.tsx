@@ -28,7 +28,7 @@ export function Nav() {
         <div className="nav-links">
           <Link href="/#products">Products</Link>
           <Link href="/#approach">Approach</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/about">About</Link>
         </div>
 
         <Link
@@ -48,10 +48,16 @@ export function Nav() {
             <Link href="/#products" onClick={closeMobileMenu}>
               Products
             </Link>
+            <Link href="/products/grassr" onClick={closeMobileMenu}>
+              Grassr
+            </Link>
+            <Link href="/products/cleanr" onClick={closeMobileMenu}>
+              Cleanr
+            </Link>
             <Link href="/#approach" onClick={closeMobileMenu}>
               Approach
             </Link>
-            <Link href="/#about" onClick={closeMobileMenu}>
+            <Link href="/about" onClick={closeMobileMenu}>
               About
             </Link>
             <Link href="/#faq" onClick={closeMobileMenu}>

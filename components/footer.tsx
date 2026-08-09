@@ -47,21 +47,17 @@ export function Footer() {
             <span>Studio</span>
             <Link href="/#products">Products</Link>
             <Link href="/#approach">Approach</Link>
-            <Link href="/#about">About</Link>
+            <Link href="/about">About</Link>
             <Link href="/#faq">FAQ</Link>
           </div>
           <div>
             <span>Products</span>
-            <a href="https://grassr.io/" target="_blank" rel="noopener noreferrer">
+            <Link href="/products/grassr">
               Grassr
-            </a>
-            <a
-              href="https://trycleanr.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </Link>
+            <Link href="/products/cleanr">
               Cleanr
-            </a>
+            </Link>
             <Link href="/privacy">Privacy</Link>
           </div>
         </nav>
