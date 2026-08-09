@@ -1,54 +1,57 @@
+import { ChevronDown } from "lucide-react";
+
 const faqs = [
   {
     question: "What is Useable Studio?",
     answer:
-      "Useable Studio is a software company that builds tools for local service businesses. We focus on trades like lawn care, cleaning, plumbing, and HVAC — businesses that run on clipboards, group texts, and spreadsheets. Our products include Grassr for lawn care professionals and Cleanr for solo cleaners and growing cleaning teams.",
-  },
-  {
-    question: "What is Cleanr?",
-    answer:
-      "Cleanr is business-management software for solo cleaners and growing cleaning teams. It brings recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments together in an iPhone app and web dashboard. Cleanr is live and available at trycleanr.com.",
+      "Useable Studio builds focused software for local service businesses. It is the studio behind Grassr for lawn care operators and Cleanr for cleaning businesses.",
   },
   {
     question: "What is Grassr?",
     answer:
-      "Grassr is lawn care management software built for crews and solo operators. It handles scheduling, route planning, invoicing, and customer management — everything a lawn care professional needs to run their business from their phone instead of a clipboard. Grassr is live and available at grassr.app.",
+      "Grassr is lawn care business software for solo operators and small crews. It supports recurring scheduling, crew coordination, route planning, customer records, estimates, invoices, and payments on the web and iPhone.",
   },
   {
-    question: "Who is Useable Studio for?",
+    question: "What is Cleanr?",
     answer:
-      "Useable Studio builds software for local service businesses — the crews that keep neighborhoods running. This includes lawn care professionals, cleaning teams, plumbers, electricians, HVAC technicians, and other skilled trades. Our tools are designed for small teams and solo operators, not enterprises.",
+      "Cleanr is business management software for solo cleaners and small cleaning teams. It supports recurring appointments, staff dispatch, time on site, customer and property records, quotes, invoices, and online card payments after connecting Stripe. It is available on the web and iPhone.",
   },
   {
-    question: "How is Useable Studio different from other software companies?",
+    question: "Who are the products for?",
     answer:
-      "Most software for service businesses was built for large enterprises and stripped down, or built by people who never worked in the field. Useable Studio builds one product per trade, starting from the actual daily workflows of that industry. Every tool is designed to be learned in minutes, useful on day one, and priced for businesses that count every dollar.",
+      "Useable Studio's current products serve solo operators and small or growing crews in lawn care and cleaning. They are not positioned as enterprise facilities-management systems.",
   },
   {
-    question: "What products are coming next?",
+    question: "Why make a separate product for each trade?",
     answer:
-      "Useable Studio is currently building tools for additional service trades beyond lawn care and cleaning. We develop one product at a time, focusing on deeply understanding each industry before building. Details on upcoming products will be announced as they get closer to launch.",
+      "Grassr and Cleanr share business concepts such as schedules, customers, crews, and invoices, but each uses the language and workflows of its own trade. Separate products let those differences stay visible.",
+  },
+  {
+    question: "Are more products coming?",
+    answer:
+      "Useable Studio is interested in additional local service trades, but Grassr and Cleanr are the two products announced and live today.",
   },
 ];
 
 export function FAQ() {
   return (
-    <section className="px-6 md:px-16 max-w-[1200px] mx-auto pb-16 md:pb-24">
-      <h2 className="text-xs uppercase tracking-[0.12em] text-[#999] font-semibold mb-8">
-        Frequently Asked Questions
-      </h2>
-      <dl className="space-y-8">
-        {faqs.map((faq, i) => (
-          <div key={i} className="border-t border-[#e5e5e5] pt-6">
-            <dt className="text-base font-semibold text-[#1a1a1a] mb-2">
-              {faq.question}
-            </dt>
-            <dd className="text-sm text-[#555] leading-[1.8] max-w-[640px]">
-              {faq.answer}
-            </dd>
-          </div>
+    <section id="faq" className="faq-section">
+      <div className="section-intro">
+        <p className="eyebrow">Questions, answered</p>
+        <h2>The details behind the studio and its products.</h2>
+      </div>
+
+      <div className="faq-list">
+        {faqs.map((faq, index) => (
+          <details key={faq.question} open={index === 0}>
+            <summary>
+              <span>{faq.question}</span>
+              <ChevronDown aria-hidden="true" />
+            </summary>
+            <p>{faq.answer}</p>
+          </details>
         ))}
-      </dl>
+      </div>
     </section>
   );
 }

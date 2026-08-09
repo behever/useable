@@ -10,16 +10,16 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Local Service Business Software | Useable Studio",
+  title: "Software for Local Service Businesses | Useable Studio",
   description:
-    "Simple software for lawn care, cleaning, and local service crews who still run on clipboards and spreadsheets. See what we're building — and get early access.",
+    "Useable Studio builds focused software for local service businesses. Explore Grassr for lawn care and Cleanr for cleaning businesses.",
   alternates: {
     canonical: "https://useable.studio",
   },
   openGraph: {
-    title: "Local Service Business Software | Useable Studio",
+    title: "Software for Local Service Businesses | Useable Studio",
     description:
-      "Simple software for lawn care, cleaning, and local service crews who still run on clipboards and spreadsheets. See what we're building — and get early access.",
+      "Useable Studio builds focused software for local service businesses. Explore Grassr for lawn care and Cleanr for cleaning businesses.",
     type: "website",
     url: "https://useable.studio",
     siteName: "Useable Studio",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Local Service Business Software | Useable Studio",
+    title: "Software for Local Service Businesses | Useable Studio",
     description:
-      "Simple software for lawn care, cleaning, and local service crews who still run on clipboards and spreadsheets. See what we're building — and get early access.",
+      "Useable Studio builds focused software for local service businesses. Explore Grassr for lawn care and Cleanr for cleaning businesses.",
     images: ["/og-image.png"],
   },
   metadataBase: new URL("https://useable.studio"),
@@ -49,13 +49,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSans.variable} font-sans antialiased bg-[#fafafa] text-[#1a1a1a]`}
-      >
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#1a1a1a] focus:text-white focus:rounded"
-        >
+      <body className={`${dmSans.variable} font-sans antialiased`}>
+        <a href="#main" className="skip-link">
           Skip to content
         </a>
         <script
@@ -66,11 +61,15 @@ export default function RootLayout({
               "@type": "Organization",
               "@id": "https://useable.studio/#organization",
               name: "Useable Studio",
+              legalName: "Useable LLC",
               url: "https://useable.studio",
-              logo: "https://useable.studio/icon.svg",
-              description:
-                "We build software for local service businesses.",
-              foundingDate: "2025",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://useable.studio/useable-logo.png",
+                width: 512,
+                height: 512,
+              },
+              description: "We build software for local service businesses.",
               sameAs: [],
             }),
           }}

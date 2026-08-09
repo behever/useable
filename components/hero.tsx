@@ -1,18 +1,90 @@
+import Image from "next/image";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { products } from "@/lib/products";
+
 export function Hero() {
   return (
-    <section className="relative px-6 pt-16 pb-24 md:px-16 md:pt-24 md:pb-32 max-w-[1200px] mx-auto">
-      <div className="flex items-center gap-3 mb-10">
-        <div className="w-12 h-12 bg-[#1a1a1a] rounded-[10px] flex items-center justify-center text-white font-bold text-xl select-none transition-opacity hover:opacity-80">
-          U
+    <section className="hero-section">
+      <div className="field-grid" aria-hidden="true" />
+      <div className="hero-copy">
+        <p className="eyebrow eyebrow--light">
+          The software studio behind Grassr + Cleanr
+        </p>
+        <h1>
+          Focused software for local service businesses.{" "}
+          <em>Built trade by trade.</em>
+        </h1>
+        <p className="hero-lede">
+          Grassr serves lawn care operators. Cleanr serves cleaning businesses.
+          Both are live, with focused tools for the work that keeps each day
+          moving.
+        </p>
+
+        <div className="hero-actions">
+          <a href="#products" className="button button--accent">
+            Explore the products
+            <ArrowDown aria-hidden="true" />
+          </a>
+          <a href="#approach" className="button button--ghost">
+            How we build
+            <ArrowDown aria-hidden="true" />
+          </a>
         </div>
+
       </div>
-      <h1 className="text-[2rem] md:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.2] max-w-[600px] text-[#1a1a1a]">
-        We build software for local service businesses.
-      </h1>
-      <p className="mt-6 text-lg text-[#777] max-w-[480px] leading-[1.7]">
-        Local service businesses run the world but run on clipboards, group
-        texts, and spreadsheets. We build the tools they actually need.
-      </p>
+
+      <section
+        className="hero-showcase"
+        aria-label="Live products from Useable Studio"
+      >
+        <div className="showcase-heading">
+          <span>Live products</span>
+          <span aria-hidden="true">02</span>
+        </div>
+
+        <div className="showcase-products">
+          {products.map((product, index) => (
+            <a
+              key={product.slug}
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={"showcase-product showcase-product--" + product.slug}
+              aria-label={"Visit " + product.name}
+            >
+              <div className="showcase-product-topline">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="live-dot">{product.status}</span>
+              </div>
+              <div className="showcase-product-title">
+                <Image
+                  src={product.iconSrc}
+                  width={512}
+                  height={512}
+                  alt=""
+                  aria-hidden="true"
+                  unoptimized
+                />
+                <div>
+                  <strong>{product.name}</strong>
+                  <span>{product.trade}</span>
+                </div>
+                <ArrowUpRight aria-hidden="true" />
+              </div>
+              <div className="showcase-feature-row" aria-hidden="true">
+                {product.features.slice(0, 3).map((feature) => (
+                  <span key={feature}>{feature}</span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="showcase-footer">
+          <span>Useable Studio</span>
+          <span>Software for local service work</span>
+        </div>
+      </section>
     </section>
   );
 }

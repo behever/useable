@@ -1,24 +1,21 @@
 # Useable Studio
 
-> Useable Studio builds software for local service businesses — lawn care crews, cleaning teams, plumbers, electricians, and HVAC techs who run on clipboards, group texts, and spreadsheets.
+> Useable Studio builds focused software for local service businesses. Its current products are Grassr for lawn care operators and Cleanr for cleaning businesses.
 
 ## Products
 
-- [Grassr](https://grassr.app): Lawn care management software for crews and solo operators. Scheduling, route planning, invoicing, and customer management. Live and available now.
-- [Cleanr](https://trycleanr.com/): Business-management software for solo cleaners and growing cleaning teams. Recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments on iPhone and the web. Live and available now.
-- One additional product is in development for another service trade.
+- [Grassr](https://grassr.io/): Lawn care business software for solo operators and small crews. Recurring scheduling, crew coordination, route planning, customers, estimates, invoices, and payments on the web and iPhone. Live now.
+- [Cleanr](https://trycleanr.com/): Cleaning business software for solo cleaners and small cleaning teams. Recurring appointments, staff dispatch, time on site, customer and property records, quotes, invoices, and online card payments after connecting Stripe. Available on the web and iPhone. Live now.
 
 ## About
 
-Useable Studio builds software one trade at a time. Each product is designed for a specific industry's daily routines and workflows — not adapted from enterprise software. Every tool is designed to be learned in minutes, useful on day one, and priced for small businesses.
-
-Founded in 2025. Based in the United States.
+Useable Studio builds a separate, focused product for each trade it serves. Grassr and Cleanr share business concepts such as schedules, crews, customers, and invoices while keeping the language and workflows of lawn care and cleaning distinct.
 
 ## Key Pages
 
 - Homepage: https://useable.studio
 - Privacy Policy: https://useable.studio/privacy
-- Grassr (lawn care product): https://grassr.app
+- Grassr (lawn care product): https://grassr.io/
 - Cleanr (cleaning business product): https://trycleanr.com/
 
 ## Contact
