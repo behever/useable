@@ -11,11 +11,13 @@ const products = [
     redacted: false,
   },
   {
-    name: "Upcoming Product",
-    tagline: "A new tool for service businesses",
-    description: "A new tool for service businesses",
-    status: "Building" as const,
-    redacted: true,
+    name: "Cleanr",
+    tagline: "Cleaning business management for solo cleaners and growing teams",
+    description:
+      "Recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments on iPhone and the web.",
+    status: "Live" as const,
+    href: "https://trycleanr.com/",
+    redacted: false,
   },
   {
     name: "Upcoming Product",

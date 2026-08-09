@@ -30,10 +30,12 @@ export function About() {
             communication.
           </p>
           <p className="text-[#555] leading-[1.8]">
-            Our first product, Grassr, is lawn care management software for
-            crews and solo operators. More trades are coming. Every product we
-            ship is designed to be learned in minutes, useful on day one, and
-            priced for a business that counts every dollar.
+            Our products include Grassr, lawn care management software for
+            crews and solo operators, and Cleanr, business management software
+            for solo cleaners and growing cleaning teams. More trades are
+            coming. Every product we ship is designed to be learned in minutes,
+            useful on day one, and priced for a business that counts every
+            dollar.
           </p>
         </div>
       </div>

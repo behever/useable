@@ -64,6 +64,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://useable.studio/#organization",
               name: "Useable Studio",
               url: "https://useable.studio",
               logo: "https://useable.studio/icon.svg",
