@@ -27,22 +27,46 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Grassr",
-            url: "https://grassr.app",
-            applicationCategory: "BusinessApplication",
-            operatingSystem: "Web",
-            description:
-              "Lawn care management software for crews and solo operators. Scheduling, route planning, invoicing, and customer management.",
-            offers: {
-              "@type": "Offer",
-              availability: "https://schema.org/InStock",
-            },
-            creator: {
-              "@type": "Organization",
-              name: "Useable Studio",
-              url: "https://useable.studio",
-            },
+            "@graph": [
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://grassr.app/#softwareapplication",
+                name: "Grassr",
+                url: "https://grassr.app",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Web",
+                description:
+                  "Lawn care management software for crews and solo operators. Scheduling, route planning, invoicing, and customer management.",
+                offers: {
+                  "@type": "Offer",
+                  availability: "https://schema.org/InStock",
+                },
+                creator: {
+                  "@id": "https://useable.studio/#organization",
+                },
+              },
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://trycleanr.com/#softwareapplication",
+                name: "Cleanr",
+                url: "https://trycleanr.com/",
+                sameAs:
+                  "https://apps.apple.com/us/app/cleanr-business-management/id6776069251",
+                applicationCategory: "BusinessApplication",
+                applicationSubCategory:
+                  "Cleaning Business Management Software",
+                operatingSystem: "iOS, Web",
+                description:
+                  "Business-management software for solo cleaners and growing cleaning teams, with recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments.",
+                offers: {
+                  "@type": "Offer",
+                  availability: "https://schema.org/InStock",
+                },
+                creator: {
+                  "@id": "https://useable.studio/#organization",
+                },
+              },
+            ],
           }),
         }}
       />

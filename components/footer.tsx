@@ -14,6 +14,7 @@ const linkStyle = {
 
 const navLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Grassr", href: "https://grassr.app", external: true },
+  { label: "Cleanr", href: "https://trycleanr.com/", external: true },
   { label: "Products", href: "/#products" },
   { label: "About", href: "/#about" },
   { label: "FAQ", href: "/#faq" },

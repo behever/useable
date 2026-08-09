@@ -5,7 +5,8 @@
 ## Products
 
 - [Grassr](https://grassr.app): Lawn care management software for crews and solo operators. Scheduling, route planning, invoicing, and customer management. Live and available now.
-- Two additional products are in development for other service trades.
+- [Cleanr](https://trycleanr.com/): Business-management software for solo cleaners and growing cleaning teams. Recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments on iPhone and the web. Live and available now.
+- One additional product is in development for another service trade.
 
 ## About
 
@@ -18,6 +19,7 @@ Founded in 2025. Based in the United States.
 - Homepage: https://useable.studio
 - Privacy Policy: https://useable.studio/privacy
 - Grassr (lawn care product): https://grassr.app
+- Cleanr (cleaning business product): https://trycleanr.com/
 
 ## Contact
 

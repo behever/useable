@@ -24,12 +24,13 @@ const products: Product[] = [
     redacted: false,
   },
   {
-    name: "Field Service Tool",
-    tagline: "A new tool for service businesses",
+    name: "Cleanr",
+    tagline: "Cleaning business management for solo cleaners and growing teams",
     description:
-      "Deep workflows for a trade we're getting to know intimately. Announcing soon.",
-    badge: { tone: "building", label: "Building" },
-    redacted: true,
+      "Recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments on iPhone and the web.",
+    badge: { tone: "live", label: "Live" },
+    href: "https://trycleanr.com/",
+    redacted: false,
   },
   {
     name: "Next Trade",

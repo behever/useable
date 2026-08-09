@@ -6,7 +6,12 @@ export const faqs = [
   {
     question: "What is Useable Studio?",
     answer:
-      "Useable Studio is a software company that builds tools for local service businesses. We focus on trades like lawn care, cleaning, plumbing, and HVAC — businesses that run on clipboards, group texts, and spreadsheets. Our first product, Grassr, is a lawn care management app for crews and solo operators.",
+      "Useable Studio is a software company that builds tools for local service businesses. We focus on trades like lawn care, cleaning, plumbing, and HVAC — businesses that run on clipboards, group texts, and spreadsheets. Our products include Grassr for lawn care professionals and Cleanr for solo cleaners and growing cleaning teams.",
+  },
+  {
+    question: "What is Cleanr?",
+    answer:
+      "Cleanr is business-management software for solo cleaners and growing cleaning teams. It brings recurring scheduling, staff dispatch, customer records, quotes, invoices, and card payments together in an iPhone app and web dashboard. Cleanr is live and available at trycleanr.com.",
   },
   {
     question: "What is Grassr?",
@@ -26,7 +31,7 @@ export const faqs = [
   {
     question: "What products are coming next?",
     answer:
-      "Useable Studio is currently building tools for additional service trades beyond lawn care. We develop one product at a time, focusing on deeply understanding each industry before building. Details on upcoming products will be announced as they get closer to launch.",
+      "Useable Studio is currently building tools for additional service trades beyond lawn care and cleaning. We develop one product at a time, focusing on deeply understanding each industry before building. Details on upcoming products will be announced as they get closer to launch.",
   },
 ];
 
