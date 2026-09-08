@@ -1,74 +1,55 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-cta">
-        <p className="eyebrow eyebrow--light">Find your product</p>
-        <h2>Explore the software built for your trade.</h2>
-        <div className="footer-cta-actions">
-          <a
-            href="https://grassr.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button--accent"
-          >
-            Visit Grassr
-            <ArrowUpRight aria-hidden="true" />
-          </a>
-          <a
-            href="https://trycleanr.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button--ghost"
-          >
-            Visit Cleanr
-            <ArrowUpRight aria-hidden="true" />
-          </a>
-        </div>
-      </div>
-
-      <div className="footer-main">
-        <div className="footer-brand">
-          <Link href="/" className="brand-lockup" aria-label="Useable Studio home">
-            <span className="brand-mark" aria-hidden="true">
-              U
-            </span>
-            <span className="brand-name">
-              Useable <em>Studio</em>
-            </span>
-          </Link>
-          <p>Focused software for local service businesses.</p>
-        </div>
-
-        <nav className="footer-links" aria-label="Footer navigation">
-          <div>
-            <span>Studio</span>
-            <Link href="/#products">Products</Link>
-            <Link href="/#approach">Approach</Link>
-            <Link href="/about">About</Link>
-            <Link href="/#faq">FAQ</Link>
+      <section
+        className="contact-section"
+        id="contact"
+        aria-labelledby="contact-heading"
+      >
+        <div className="page-width" data-reveal>
+          <p className="section-label">Let’s make something useable</p>
+          <h2 id="contact-heading">
+            What have you been
+            <br />
+            <em>wanting to build?</em>
+          </h2>
+          <p className="contact-lede">
+            An idea you keep coming back to. A process that takes too much time.
+            <br className="desktop-break" /> A product that could work better.
+            Tell us what you’re thinking.
+          </p>
+          <div className="contact-actions">
+            <a
+              className="button button--dark"
+              href="mailto:hello@useable.studio?subject=Let%E2%80%99s%20talk%20about%20a%20project"
+            >
+              Tell us about your project <ArrowUpRight aria-hidden="true" />
+            </a>
+            <div className="contact-email">
+              <a className="text-link" href="mailto:hello@useable.studio">
+                hello@useable.studio
+              </a>
+            </div>
           </div>
-          <div>
-            <span>Products</span>
-            <Link href="/products/grassr">
-              Grassr
-            </Link>
-            <Link href="/products/cleanr">
-              Cleanr
-            </Link>
-            <Link href="/privacy">Privacy</Link>
-          </div>
+        </div>
+      </section>
+      <div className="footer-bottom page-width">
+        <Link
+          href="/"
+          className="brand-lockup"
+          aria-label="Useable Studio home"
+        >
+          useable <em>studio</em>
+        </Link>
+        <nav aria-label="Footer navigation">
+          <Link href="/#work">Work</Link>
+          <Link href="/about">Studio</Link>
+          <Link href="/privacy">Privacy</Link>
         </nav>
-      </div>
-
-      <div className="footer-bottom">
-        <span>&copy; 2026 Useable LLC · Useable Studio</span>
-        <a href="mailto:hello@useable.studio">
-          <Mail aria-hidden="true" />
-          hello@useable.studio
-        </a>
+        <span>© 2026 Useable LLC</span>
       </div>
     </footer>
   );

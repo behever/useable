@@ -1,0 +1,18 @@
+{
+  "retrieved": "2026-09-08",
+  "screenshots": {
+    "grassr": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/ef/45/39ef4542-85c9-4ffe-b58c-b72b1bc1b0d8/Screenshot_2026-02-27_at_7.54.27_U202fPM.jpg/1200x0w.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/80/df/bc80dff7-05d0-16a3-9e1d-ef49cb4acafb/Screenshot_2026-02-27_at_7.50.40_U202fPM.jpg/1200x0w.jpg"
+    ],
+    "cleanr": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/1f/b0/b61fb058-0cd4-9ef2-d404-ce16de8aa387/Dashboard.png/1200x0w.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3c/ae/8a/3cae8a1c-5bfe-6e4d-53d3-9e078081f712/Schedule.png/1200x0w.jpg"
+    ]
+  },
+  "backgrounds": {
+    "tool": "Built-in image generation",
+    "grassr": "Photographic grass scene derived from work concept.",
+    "cleanr": "Photographic cleaning scene derived from work concept."
+  }
+}

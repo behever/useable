@@ -11,16 +11,16 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Software for Local Service Businesses | Useable Studio",
+  title: "Software Design & Development | Useable Studio",
   description:
-    "Useable Studio builds focused software for local service businesses. Explore Grassr for lawn care and Cleanr for cleaning businesses.",
+    "We design and build software that makes everyday work easier. Explore Grassr and Cleanr, or talk to Useable Studio about your project.",
   alternates: {
     canonical: "https://useable.studio",
   },
   openGraph: {
-    title: "Software for Local Service Businesses | Useable Studio",
+    title: "Software Design & Development | Useable Studio",
     description:
-      "Useable Studio builds focused software for local service businesses. Explore Grassr for lawn care and Cleanr for cleaning businesses.",
+      "We design and build software that makes everyday work easier. Explore Grassr and Cleanr, or talk to Useable Studio about your project.",
     type: "website",
     url: "https://useable.studio",
     siteName: "Useable Studio",
@@ -29,15 +29,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Useable Studio — Software for Local Service Businesses",
+        alt: "Useable Studio — Good ideas. Made useable.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Software for Local Service Businesses | Useable Studio",
+    title: "Software Design & Development | Useable Studio",
     description:
-      "Useable Studio builds focused software for local service businesses. Explore Grassr for lawn care and Cleanr for cleaning businesses.",
+      "We design and build software that makes everyday work easier. Explore Grassr and Cleanr, or talk to Useable Studio about your project.",
     images: ["/og-image.png"],
   },
   metadataBase: new URL("https://useable.studio"),
@@ -73,7 +73,7 @@ export default function RootLayout({
                     height: 512,
                   },
                   description:
-                    "Useable Studio builds focused software for local service businesses.",
+                    "Useable Studio designs and builds useful software. The studio behind Grassr and Cleanr, open to helping with your next project.",
                 },
                 {
                   "@type": "WebSite",
