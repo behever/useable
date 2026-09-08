@@ -42,7 +42,7 @@ export function About() {
               We built Grassr and Cleanr around the way people actually work.
               That same curiosity shapes every project we take on.
             </p>
-            <Link href="/about" className="text-link">
+            <Link href="/about" prefetch={false} className="text-link">
               Meet Useable Studio <ArrowUpRight aria-hidden="true" />
             </Link>
           </div>

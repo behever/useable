@@ -31,6 +31,7 @@ export function Hero() {
             <Link
               className="hero-device hero-device--grassr"
               href="/products/grassr"
+              prefetch={false}
               aria-label="Explore Grassr"
             >
               <ProductPhone product="grassr" screen="dashboard" priority />
@@ -38,6 +39,7 @@ export function Hero() {
             <Link
               className="hero-device hero-device--cleanr"
               href="/products/cleanr"
+              prefetch={false}
               aria-label="Explore Cleanr"
             >
               <ProductPhone product="cleanr" screen="schedule" priority />

@@ -46,7 +46,9 @@ export function Footer() {
         </Link>
         <nav aria-label="Footer navigation">
           <Link href="/#work">Work</Link>
-          <Link href="/about">Studio</Link>
+          <Link href="/about" prefetch={false}>
+            Studio
+          </Link>
           <Link href="/privacy">Privacy</Link>
         </nav>
         <span>© 2026 Useable LLC</span>
