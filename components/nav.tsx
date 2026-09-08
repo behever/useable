@@ -43,10 +43,10 @@ export function Nav() {
             <Link href="/#studio" onClick={closeMenu}>
               The studio <ArrowUpRight aria-hidden="true" />
             </Link>
-            <Link href="/products/grassr" onClick={closeMenu}>
+            <Link href="/products/grassr" prefetch={false} onClick={closeMenu}>
               Grassr
             </Link>
-            <Link href="/products/cleanr" onClick={closeMenu}>
+            <Link href="/products/cleanr" prefetch={false} onClick={closeMenu}>
               Cleanr
             </Link>
             <Link href="/#contact" onClick={closeMenu}>

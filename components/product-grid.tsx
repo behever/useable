@@ -44,6 +44,7 @@ export function ProductGrid() {
             <article className="work-product" key={product.slug} data-reveal>
               <Link
                 href={product.internalHref}
+                prefetch={false}
                 className="work-scene-link"
                 aria-label={`Explore ${product.name}`}
               >
@@ -59,7 +60,11 @@ export function ProductGrid() {
                   {stories[product.slug].description}
                 </p>
                 <div className="product-links">
-                  <Link href={product.internalHref} className="text-link">
+                  <Link
+                    href={product.internalHref}
+                    prefetch={false}
+                    className="text-link"
+                  >
                     Explore {product.name} <ArrowUpRight aria-hidden="true" />
                   </Link>
                   <a
