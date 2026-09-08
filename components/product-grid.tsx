@@ -1,97 +1,80 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { products } from "@/lib/products";
+import { ProductScene } from "@/components/product-scene";
 
+const stories = {
+  grassr: {
+    title: "Keep the day’s work moving.",
+    description:
+      "Recurring jobs, crews, routes, and payments—connected for solo operators and small lawn care teams.",
+    category: "Lawn care",
+  },
+  cleanr: {
+    title: "Every clean. Every detail. Together.",
+    description:
+      "Appointments, staff, property details, and invoices—in one place for cleaning businesses.",
+    category: "Cleaning",
+  },
+};
 export function ProductGrid() {
   return (
-    <section id="products" className="products-section">
-      <div className="section-intro">
-        <p className="eyebrow">Live products</p>
-        <h2>Two products. Each built for a specific trade.</h2>
-        <p>
-          Grassr and Cleanr share the business essentials while keeping the
-          language and workflows of lawn care and cleaning distinct.
-        </p>
-      </div>
-
-      <div className="product-card-grid">
-        {products.map((product) => (
-          <article
-            key={product.slug}
-            className={"product-card product-card--" + product.slug}
-          >
-            <div className="product-card-visual">
-              <div className="product-card-status">
-                <span>{product.trade}</span>
-                <span className="live-dot">{product.status}</span>
+    <section
+      id="work"
+      className="work-section paper-section"
+      aria-labelledby="work-heading"
+    >
+      <div className="page-width">
+        <div className="work-heading" data-reveal>
+          <div>
+            <p className="section-label">01 / Selected work</p>
+            <h2 id="work-heading" className="display-heading">
+              Built for the
+              <br />
+              <em>real world.</em>
+            </h2>
+          </div>
+          <p className="work-intro">
+            Our own products. Real problems. Thoughtfully built from the first
+            idea to the everyday details.
+          </p>
+        </div>
+        <div className="work-grid" id="products">
+          {products.map((product, index) => (
+            <article className="work-product" key={product.slug} data-reveal>
+              <Link
+                href={product.internalHref}
+                className="work-scene-link"
+                aria-label={`Explore ${product.name}`}
+              >
+                <ProductScene product={product.slug} index={index} />
+              </Link>
+              <div className="work-product-copy">
+                <h3>{product.name}</h3>
+                <p className="product-category">
+                  {stories[product.slug].category} / iOS + Web
+                </p>
+                <h4>{stories[product.slug].title}</h4>
+                <p className="product-description">
+                  {stories[product.slug].description}
+                </p>
+                <div className="product-links">
+                  <Link href={product.internalHref} className="text-link">
+                    Explore {product.name} <ArrowUpRight aria-hidden="true" />
+                  </Link>
+                  <a
+                    href={product.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link"
+                  >
+                    Visit product <ArrowUpRight aria-hidden="true" />
+                  </a>
+                </div>
               </div>
-              <Image
-                className="product-wordmark"
-                src={product.wordmarkSrc}
-                width={product.wordmarkWidth}
-                height={product.wordmarkHeight}
-                alt={product.name}
-                loading="lazy"
-                decoding="async"
-                unoptimized
-              />
-              <Image
-                className="product-card-icon"
-                src={product.iconSrc}
-                width={512}
-                height={512}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                decoding="async"
-                unoptimized
-              />
-            </div>
-
-            <div className="product-card-body">
-              <h3>{product.tagline}</h3>
-              <p>{product.description}</p>
-
-              <ul className="feature-list" aria-label={product.name + " features"}>
-                {product.features.map((feature) => (
-                  <li key={feature}>
-                    <Check aria-hidden="true" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="product-card-actions">
-                <Link
-                  href={product.internalHref}
-                  className="button button--dark"
-                >
-                  About {product.name}
-                  <ArrowRight aria-hidden="true" />
-                </Link>
-                <a
-                  href={product.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-link"
-                >
-                  Visit {product.name}
-                  <ArrowUpRight aria-hidden="true" />
-                </a>
-                <a
-                  href={product.appStoreHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-link"
-                >
-                  View iPhone app
-                  <ArrowUpRight aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

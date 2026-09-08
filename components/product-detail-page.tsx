@@ -1,12 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronRight } from "lucide-react";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
+import { ProductScene } from "@/components/product-scene";
 import styles from "@/components/interior-pages.module.css";
 import type { Product } from "@/lib/products";
 import {
@@ -96,40 +92,8 @@ export function ProductDetailPage({ product }: { product: Product }) {
               </div>
             </div>
 
-            <div
-              className={`${styles.brandPanel} ${styles[product.slug]}`}
-              role="group"
-              aria-label={`${product.name} product identity`}
-            >
-              <div className={styles.panelTopline}>
-                <span>{product.trade}</span>
-                <span>{product.operatingSystem}</span>
-              </div>
-              <div className={styles.panelBrand}>
-                <Image
-                  className={styles.panelWordmark}
-                  src={product.wordmarkSrc}
-                  width={product.wordmarkWidth}
-                  height={product.wordmarkHeight}
-                  alt={`${product.name} wordmark`}
-                  priority
-                  unoptimized
-                />
-                <Image
-                  className={styles.panelIcon}
-                  src={product.iconSrc}
-                  width={512}
-                  height={512}
-                  alt={`${product.name} app icon`}
-                  priority
-                  unoptimized
-                />
-              </div>
-              <ul className={styles.panelFeatures}>
-                {product.features.slice(0, 4).map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
+            <div className={styles.productScene}>
+              <ProductScene product={product.slug} screen="dashboard" priority />
             </div>
           </div>
         </section>
@@ -140,8 +104,8 @@ export function ProductDetailPage({ product }: { product: Product }) {
               <p className="eyebrow">The product workflow</p>
               <h2>What {product.name} connects.</h2>
               <p>
-                A concise look at the day-to-day work the product is designed
-                to keep together.
+                A concise look at the day-to-day work the product is designed to
+                keep together.
               </p>
             </div>
             <div className={styles.workflowGrid}>
@@ -182,8 +146,8 @@ export function ProductDetailPage({ product }: { product: Product }) {
               <p className="eyebrow">Official destinations</p>
               <h2>Find {product.name} in the right place.</h2>
               <p>
-                Product details, access, support, and policies are maintained
-                on these official {product.name} pages.
+                Product details, access, support, and policies are maintained on
+                these official {product.name} pages.
               </p>
             </div>
             <div className={styles.officialGrid}>

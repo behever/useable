@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  ChevronRight,
-  Mail,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronRight, Mail } from "lucide-react";
 import { Footer } from "@/components/footer";
 import styles from "@/components/interior-pages.module.css";
 import { Nav } from "@/components/nav";
@@ -16,14 +11,14 @@ import { organizationId, websiteId } from "@/lib/structured-data";
 const canonical = "https://useable.studio/about";
 
 export const metadata: Metadata = {
-  title: "About Useable Studio | Software for Local Service Businesses",
+  title: "About Useable Studio | Thoughtfully Built Software",
   description:
-    "Useable Studio is the software studio behind Grassr for lawn care and Cleanr for cleaning businesses.",
+    "Meet the software studio behind Grassr and Cleanr. We build around everyday work and help turn ideas into useful products.",
   alternates: { canonical },
   openGraph: {
-    title: "About Useable Studio | Software for Local Service Businesses",
+    title: "About Useable Studio | Thoughtfully Built Software",
     description:
-      "Useable Studio is the software studio behind Grassr for lawn care and Cleanr for cleaning businesses.",
+      "Meet the software studio behind Grassr and Cleanr. We build around everyday work and help turn ideas into useful products.",
     type: "website",
     url: canonical,
     siteName: "Useable Studio",
@@ -38,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Useable Studio | Software for Local Service Businesses",
+    title: "About Useable Studio | Thoughtfully Built Software",
     description:
-      "Useable Studio is the software studio behind Grassr for lawn care and Cleanr for cleaning businesses.",
+      "Meet the software studio behind Grassr and Cleanr. We build around everyday work and help turn ideas into useful products.",
     images: ["/og-image.png"],
   },
 };
@@ -54,7 +49,7 @@ const jsonLd = {
       url: canonical,
       name: "About Useable Studio",
       description:
-        "Useable Studio is the software studio behind Grassr for lawn care and Cleanr for cleaning businesses.",
+        "Meet the software studio behind Grassr and Cleanr. We build around everyday work and help turn ideas into useful products.",
       isPartOf: { "@id": websiteId },
       publisher: { "@id": organizationId },
       about: { "@id": organizationId },
@@ -95,19 +90,19 @@ export default function AboutPage() {
             </nav>
             <div className={styles.aboutHeroCopy}>
               <p className="eyebrow eyebrow--light">About Useable Studio</p>
-              <h1>Focused software for local service work.</h1>
+              <h1>Good software. Built around people.</h1>
               <p className={styles.aboutLede}>
                 Useable Studio is the software studio behind Grassr and Cleanr.
-                Our current products serve lawn care operators and cleaning
-                businesses.
+                We design and build around the way people actually work, and
+                help others bring their own ideas to life.
               </p>
               <div className={styles.aboutActions}>
-                <Link href="/products/grassr" className="button button--accent">
-                  Explore Grassr
+                <Link href="/#contact" className="button button--accent">
+                  Tell us about your project
                   <ArrowRight aria-hidden="true" />
                 </Link>
-                <Link href="/products/cleanr" className="button button--ghost">
-                  Explore Cleanr
+                <Link href="/#work" className="button button--ghost">
+                  Explore our work
                   <ArrowRight aria-hidden="true" />
                 </Link>
               </div>
@@ -119,13 +114,13 @@ export default function AboutPage() {
           <div className={styles.aboutBodyGrid}>
             <div>
               <p className="eyebrow">How we build</p>
-              <h2>Build around the trade.</h2>
+              <h2>Start with the everyday details.</h2>
               <p>
                 Grassr and Cleanr share operational building blocks—schedules,
                 customers, crews, estimates or quotes, invoices, and
                 payments—but each trade uses different language and day-to-day
-                workflows. We keep those differences visible instead of
-                forcing both trades into one generic interface.
+                workflows. We keep those differences visible instead of forcing
+                both trades into one generic interface.
               </p>
             </div>
             <aside className={styles.sharedFoundation}>
@@ -147,8 +142,9 @@ export default function AboutPage() {
             <p className="eyebrow">Current products</p>
             <h2>One studio. Two focused products.</h2>
             <p className={styles.aboutProductsIntro}>
-              Each product has its own page here for studio context and its own
-              official site for product access, support, and maintained details.
+              Grassr brings a lawn care day together. Cleanr keeps the details
+              of every clean connected. Each product starts with the people
+              doing the work.
             </p>
             <div className={styles.aboutProductGrid}>
               {products.map((product) => (
@@ -198,9 +194,9 @@ export default function AboutPage() {
               <p className="eyebrow">Company</p>
               <h2>Useable Studio is the product studio of Useable LLC.</h2>
               <p>
-                For studio questions, contact us directly. Product support and
-                legal information are available from each product’s official
-                site.
+                Have a project in mind? Tell us what you want to build, who it
+                helps, and where you could use a hand. Product support is
+                available through each product’s official site.
               </p>
             </div>
             <a

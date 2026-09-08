@@ -1,89 +1,57 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { products } from "@/lib/products";
+import { ProductPhone } from "@/components/product-scene";
 
 export function Hero() {
   return (
-    <section className="hero-section">
-      <div className="field-grid" aria-hidden="true" />
-      <div className="hero-copy">
-        <p className="eyebrow eyebrow--light">
-          The software studio behind Grassr + Cleanr
-        </p>
-        <h1>
-          Focused software for local service businesses.{" "}
-          <em>Built trade by trade.</em>
-        </h1>
-        <p className="hero-lede">
-          Grassr serves lawn care operators. Cleanr serves cleaning businesses.
-          Both are live, with focused tools for the work that keeps each day
-          moving.
-        </p>
-
-        <div className="hero-actions">
-          <a href="#products" className="button button--accent">
-            Explore the products
-            <ArrowDown aria-hidden="true" />
-          </a>
-          <a href="#approach" className="button button--ghost">
-            How we build
-            <ArrowDown aria-hidden="true" />
-          </a>
+    <section className="hero-section" aria-labelledby="hero-heading">
+      <div className="hero-main page-width">
+        <div className="hero-copy">
+          <h1 id="hero-heading">
+            <span>Good ideas.</span>
+            <em>Made useable.</em>
+          </h1>
+          <p className="hero-lede">
+            We design and build software that makes everyday work easier.
+          </p>
+          <div className="hero-actions">
+            <a href="#contact" className="button button--accent">
+              Tell us about your project <ArrowUpRight aria-hidden="true" />
+            </a>
+            <a href="#work" className="text-link">
+              Explore our work <ArrowDown aria-hidden="true" />
+            </a>
+          </div>
         </div>
-
-      </div>
-
-      <section
-        className="hero-showcase"
-        aria-label="Live products from Useable Studio"
-      >
-        <div className="showcase-heading">
-          <span>Live products</span>
-          <span aria-hidden="true">02</span>
-        </div>
-
-        <div className="showcase-products">
-          {products.map((product, index) => (
+        <div className="hero-visual" aria-label="Grassr and Cleanr on iPhone">
+          <span className="hero-monogram" aria-hidden="true">
+            U
+          </span>
+          <div className="hero-phones">
             <Link
-              key={product.slug}
-              href={product.internalHref}
-              className={"showcase-product showcase-product--" + product.slug}
-              aria-label={"Learn about " + product.name}
+              className="hero-device hero-device--grassr"
+              href="/products/grassr"
+              aria-label="Explore Grassr"
             >
-              <div className="showcase-product-topline">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <span className="live-dot">{product.status}</span>
-              </div>
-              <div className="showcase-product-title">
-                <Image
-                  src={product.iconSrc}
-                  width={512}
-                  height={512}
-                  alt=""
-                  aria-hidden="true"
-                  unoptimized
-                />
-                <div>
-                  <strong>{product.name}</strong>
-                  <span>{product.trade}</span>
-                </div>
-                <ArrowUpRight aria-hidden="true" />
-              </div>
-              <div className="showcase-feature-row" aria-hidden="true">
-                {product.features.slice(0, 3).map((feature) => (
-                  <span key={feature}>{feature}</span>
-                ))}
-              </div>
+              <ProductPhone product="grassr" screen="dashboard" priority />
             </Link>
-          ))}
+            <Link
+              className="hero-device hero-device--cleanr"
+              href="/products/cleanr"
+              aria-label="Explore Cleanr"
+            >
+              <ProductPhone product="cleanr" screen="schedule" priority />
+            </Link>
+          </div>
         </div>
-
-        <div className="showcase-footer">
-          <span>Useable Studio</span>
-          <span>Software for local service work</span>
-        </div>
-      </section>
+      </div>
+      <div className="hero-baseline page-width">
+        <span>Independent software studio</span>
+        <a href="#work">
+          Grassr + Cleanr <span className="baseline-divider">/</span> iOS &amp;
+          Web <ArrowDown aria-hidden="true" />
+        </a>
+      </div>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 # Useable Studio
 
-> Useable Studio builds focused software for local service businesses. Its current products are Grassr for lawn care operators and Cleanr for cleaning businesses.
+> Useable Studio designs and builds software that makes everyday work easier. Its current products are Grassr for lawn care operators and Cleanr for cleaning businesses. The studio also welcomes project inquiries from people with an idea, a process to improve, or an existing product to develop further.
 
 ## Products
 
@@ -20,6 +20,10 @@ Useable Studio builds a separate, focused product for each trade it serves. Gras
 - Privacy Policy: https://useable.studio/privacy
 - Grassr (lawn care product): https://grassr.io/
 - Cleanr (cleaning business product): https://trycleanr.com/
+
+## Work with the studio
+
+Useable Studio welcomes conversations about software design and development projects. Start with a short description of the idea, who it helps, and where you need a hand. Email hello@useable.studio.
 
 ## Contact
 
